@@ -19,15 +19,15 @@ class HomeView extends React.Component {
 
     }
     remove=(e)=>{
+
         let id =e.target.getAttribute("data-id");
         //怎么在页面中删除
-        this.props.userList.filter(item => item.id != id);
-        console.log(this.props.userList);
         this.props.fetchRemove(id)
 
     };
-  render () {
 
+  render () {
+      console.log(this.props);
       return (
       <div>
           <Link to="/add" className="add">增加</Link>
@@ -40,7 +40,8 @@ class HomeView extends React.Component {
               </li>
               {this.props.userList.map((item,index)=>(
                   <li key={index} className="list_title" >
-                      <span>{item.id}</span>
+                      <Link to={`/detail/${item.id}`}>
+                          <span>{item.id}</span></Link>
                       <span>{item.name}</span>
                       <span>{item.email}</span>
                       <span>
@@ -75,12 +76,14 @@ let mapDispatchToProps = (dispatch)=>({
     },
     fetchRemove:(id)=>{
         removeList(id).then(removeList=>{
-
+            // console.log(removeList);
             dispatch({
                 type:types.FETCH_REMOVE,
-                removeList
+                removeList,
+                id
             })
         })
-    }
+    },
+
 });
 export default connect(mapStateToProps,mapDispatchToProps)(HomeView)

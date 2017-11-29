@@ -5,7 +5,9 @@
 import *as types from './action-types'
 const initState = {
     userList:[],
-    removeList:[]
+    removeList:[],
+    addList:[],
+    oneList:[]
 };
 
 export default function(state=initState,action) {
@@ -14,7 +16,14 @@ export default function(state=initState,action) {
         case types.FETCH_LIST:
             return {...state,userList:action.userList};
         case types.FETCH_REMOVE:
-            return {...state,removeList:action.removeList}
+           let userNewList =  state.userList.filter(item=>item.id!=action.id);
+            return {...state,removeList:action.removeList,userList:userNewList};
+        case types.FETCH_ADD:
+            return {...state,addList:action.addList};
+        case types.FETCH_ONE:
+            let oneUser = action.oneList.find(item=>item.id==action.id);
+            console.log(oneUser);
+            return {...state,oneList:oneUser};
         default:
             return state
     }
