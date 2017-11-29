@@ -23,10 +23,10 @@ email: { type: 'email', max-length: 100, required }
 
 ### 接口
 *  host: https://www.mxcins.com
-*  list : GET /api/users
-*  create: POST /api/users
-*  update: PUT /api/users/:id
-*  destroy: DELETE /api/users/:id
+*  list : GET /api/users  查
+*  create: POST /api/users 增
+*  update: PUT /api/users/:id 改
+*  destroy: DELETE /api/users/:id  删
 
 
 ##### 其他

@@ -1,0 +1,43 @@
+.content{
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    border:1px solid red;
+}
+.content .inp{
+    margin-left: 30px;
+    width:60% ;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.content .inp label{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+}
+.content .inp input{
+    float: right;
+    width: 240px;
+    height: 25px;
+    vertical-align: middle;
+    line-height: 25px;
+    outline: none;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.content .btn{
+    border: none;
+    width: 75px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius:10px ;
+    margin-left: 300px;
+    margin-top: 20px;
+    background: orchid;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}

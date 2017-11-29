@@ -33,7 +33,7 @@ export default (initialState = {}, history) => {
   ))
 
   // 创建asyncReducers存放异步加载进来的state
-  store.asyncReducers = {}
-
+  store.asyncReducers = {};
+  window.store = store;
   return store
 }

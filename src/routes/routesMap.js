@@ -1,4 +1,5 @@
 import HomeView from 'view/home'
+import AddUser from 'view/add'
 
 export default [
   {
@@ -6,5 +7,10 @@ export default [
     name: 'home',
     path: '/',
     component: HomeView,
-  }
+  },
+    {
+      name:'add',
+      path:'/add',
+      component:AddUser,
+    }
 ]
