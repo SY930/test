@@ -4,6 +4,7 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import {removeList,getOneList} from '../../api/home'
+import {Link} from 'react-router-dom'
 import * as types from '../../store/action-types'
  class Detail extends Component{
     componentDidMount(){
@@ -29,12 +30,12 @@ import * as types from '../../store/action-types'
                         <span>操作</span>
                     </li>
                         <li className="list_title" >
-                             <span data-id={this.props.oneList.id} onClick={this.oneList}>{this.props.oneList.id}</span>
-                            <span>{this.props.oneList.name}</span>
-                            <span>{this.props.oneList.email}</span>
+                             <span data-id={this.props.oneUser.id}>{this.props.oneUser.id}</span>
+                            <span>{this.props.oneUser.name}</span>
+                            <span>{this.props.oneUser.email}</span>
                             <span>
-                          <a href="javaScript:;" data-id={this.props.oneList.id} onClick={this.remove} >删除</a>
-                          <a href="javaScript:;">修改</a>
+                          <a href="javaScript:;" data-id={this.props.oneUser.id} onClick={this.remove} >删除</a>
+                          <Link to={`/update/${this.props.oneUser.id}`}>修改</Link>
                       </span>
                         </li>
 

@@ -23,9 +23,9 @@ export default function(state=initState,action) {
         case types.FETCH_ONE:
             let User = action.oneList.find(item=>item.id==action.id);
             console.log(User);
-            return {...state,oneUser:User};
+            return {...state,oneUser:User,};
         case types.FETCH_UPDATE:
-            return {...state,updateList:action.updateList}
+            return {...state,updateList:action.updateList};
         default:
             return state
     }

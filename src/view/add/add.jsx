@@ -16,7 +16,7 @@ class AddUser extends Component {
         let name = this.refs.userName.value;
         let email = this.refs.userEmail.value;
         // console.log(userId, userName,userEmail);
-        this.props.fetchAdd({name,email})
+        this.props.fetchAdd({name,email});
     };
     render() {
         return (
