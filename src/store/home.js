@@ -7,11 +7,11 @@ const initState = {
     userList:[],
     removeList:[],
     addList:[],
-    oneList:[]
+    oneUser:{}
 };
 
 export default function(state=initState,action) {
-    console.log(action.userList);
+    //console.log(action.userList);
     switch (action.type){
         case types.FETCH_LIST:
             return {...state,userList:action.userList};
@@ -21,9 +21,11 @@ export default function(state=initState,action) {
         case types.FETCH_ADD:
             return {...state,addList:action.addList};
         case types.FETCH_ONE:
-            let oneUser = action.oneList.find(item=>item.id==action.id);
-            console.log(oneUser);
-            return {...state,oneList:oneUser};
+            let User = action.oneList.find(item=>item.id==action.id);
+            console.log(User);
+            return {...state,oneUser:User};
+        case types.FETCH_UPDATE:
+            return {...state,updateList:action.updateList}
         default:
             return state
     }

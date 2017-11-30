@@ -25,3 +25,14 @@ export const post = (url,body)=>{
         body:JSON.stringify(body)
     }).then(res=>res.json())
 };
+
+export const upDate = (url,body)=>{
+    console.log(url);
+    return fetch(`${HOST}${url}`,{
+        method:'put',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(body)
+    }).then(res=>res.json())
+};

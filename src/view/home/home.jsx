@@ -16,7 +16,6 @@ class HomeView extends React.Component {
   }
     componentDidMount(){
       this.props.fetchList();
-
     }
     remove=(e)=>{
 
@@ -46,7 +45,7 @@ class HomeView extends React.Component {
                       <span>{item.email}</span>
                       <span>
                           <a href="javaScript:;" data-id={item.id} onClick={this.remove} >删除</a>
-                          <a href="javaScript:;">修改</a>
+                          <Link to={`/update/${item.id}`}>修改</Link>
                       </span>
                   </li>
               ))}

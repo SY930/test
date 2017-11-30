@@ -14,3 +14,6 @@ export const FETCH_ADD = 'FETCH_ADD';
 
 //查询一个用户详情
 export const FETCH_ONE = 'FETCH_ONE';
+
+//修改一个用户详情
+export const FETCH_UPDATE = 'FETCH_UPDATE'

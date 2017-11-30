@@ -18,7 +18,7 @@ import * as types from '../../store/action-types'
 
      };
     render(){
-
+        console.log(this.props);
         return (
             <div>
                 <ul className="title">
