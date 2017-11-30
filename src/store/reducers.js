@@ -4,13 +4,16 @@
 import { combineReducers } from 'redux'
 import numberReducer from './number'
 import home from './home'
+import {routerReducer} from 'react-router-redux'
 
 export const makeRootReducer = asyncReducers => {
     console.log(asyncReducers);
     return combineReducers({
     num: numberReducer,
         home,
+        router:routerReducer,
     ...asyncReducers,
+
   })
 }
 

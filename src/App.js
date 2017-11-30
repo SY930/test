@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
-import {  Router } from 'react-router-dom'
 import { renderRoutes, routesMap } from 'routes'
+import { ConnectedRouter} from 'react-router-redux'
 
 class App extends Component {
   static propTypes = {
@@ -13,11 +13,11 @@ class App extends Component {
     const { store, history } = this.props
     return (
       <Provider store={store}>
-        <Router history={history}>
+        <ConnectedRouter history={history}>
           <div>
             {renderRoutes(routesMap)}
           </div>
-        </Router>
+        </ConnectedRouter>
       </Provider>
     )
   }

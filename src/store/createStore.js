@@ -5,7 +5,10 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import makeRootReducer from './reducers'
 import thunk from 'redux-thunk'
-
+import {routerMiddleware} from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
+const history = createHistory();
+const middlewareR = routerMiddleware(history);
 const __DEV__ = process.env.NODE_ENV === 'development'
 
 // 接受一个初始化参数，返回store
@@ -28,7 +31,7 @@ export default (initialState = {}, history) => {
   }
 
   const store = createStore(makeRootReducer(), initialState, compose(
-    applyMiddleware(...middleware),
+    applyMiddleware(...middleware,middlewareR),
     ...enhancers
   ))
 

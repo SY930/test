@@ -6,6 +6,7 @@ import './index.css'
 import {addUser} from '../../api/home'
 import * as types from '../../store/action-types'
 import {connect} from 'react-redux'
+import {push } from 'react-router-redux'
 class AddUser extends Component {
     constructor(){
      super();
@@ -44,6 +45,8 @@ class AddUser extends Component {
         )
     }
 }
+//message："create success."
+
 let mapStateToProps = state =>({
     ...state.home
 });
@@ -54,7 +57,11 @@ let mapDispatchToProps = (dispatch) =>({
             dispatch({
                 type:types.FETCH_ADD,
                 addList
-            })
+            });
+            if(addList.message=='create success.'){
+                //alert(addList.message)
+             dispatch(push(`/detail/${addList.id}`));
+            }
         })
     }
 })
